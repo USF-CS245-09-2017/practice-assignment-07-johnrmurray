@@ -1,3 +1,5 @@
+package p07;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -17,7 +19,7 @@ public class Practice7Test {
 		String val = "push";
 		boolean success = false;
 		
-		hashtable = new Hashtable();
+		Hashtable hashtable = new Hashtable();
 		
 		try {
 			hashtable.put(key, val);
@@ -36,10 +38,10 @@ public class Practice7Test {
 		String key = "American Terrorist";
 		boolean success = false;
 		
-		hashtable = new Hashtable();
+		Hashtable hashtable = new Hashtable();
 		
 		try {
-			if (! hashtable.contains(key)) {
+			if (! hashtable.containsKey(key)) {
 				if (hashtable.get(key).equals(null))
 					success = true;
 				else
@@ -59,7 +61,7 @@ public class Practice7Test {
 		String val = "I dream of you amid the flowers";
 		boolean success = false;
 		
-		hashtable = new Hashtable();
+		Hashtable hashtable = new Hashtable();
 		
 		try {
 			hashtable.put(key, val);
@@ -81,11 +83,11 @@ public class Practice7Test {
 		String key = "food for thought";
 		boolean success = false;
 		
-		hashtable = new Hashtable();
+		Hashtable hashtable = new Hashtable();
 		
 		try {
-			if (! hashtable.contains(key)) {
-				String shouldNotExist = hashtable.remove(key);
+			if (! hashtable.containsKey(key)) {
+				String shouldNotExist = (String) hashtable.remove(key);
 				if (shouldNotExist != null || shouldNotExist.length() > 0)
 					success = false;
 				else
@@ -109,7 +111,7 @@ public class Practice7Test {
 		long start = 0;
 		long end = 0;
 		
-		hashtable = new Hashtable();
+		Hashtable hashtable = new Hashtable();
 		
 		try {
 		    reader = new BufferedReader(new FileReader(file));
@@ -131,6 +133,7 @@ public class Practice7Test {
 		    }
 		    end = System.currentTimeMillis();
 		} catch (Exception e) {
+			System.out.println(e.toString());
 			System.out.println("Unable to conduct timing test.");
 			success = false;
 		}
